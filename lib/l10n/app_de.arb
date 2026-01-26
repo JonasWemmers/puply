@@ -1,0 +1,47 @@
+{
+  "@@locale": "de",
+  "welcomeBack": "Willkommen zurück!",
+  "@welcomeBack": {
+    "description": "Begrüßungstext auf dem Login-Screen"
+  },
+  "loginToCheckPup": "Melde dich an, um nach deinem Welpen zu sehen.",
+  "@loginToCheckPup": {
+    "description": "Untertitel auf dem Login-Screen"
+  },
+  "continueWithGoogle": "Mit Google fortfahren",
+  "@continueWithGoogle": {
+    "description": "Text für Google-Login-Button"
+  },
+  "continueWithApple": "Mit Apple fortfahren",
+  "@continueWithApple": {
+    "description": "Text für Apple-Login-Button"
+  },
+  "or": "oder",
+  "@or": {
+    "description": "Trennzeichen zwischen Social-Login und Email-Login"
+  },
+  "email": "E-Mail",
+  "@email": {
+    "description": "Placeholder für Email-Eingabefeld"
+  },
+  "password": "Passwort",
+  "@password": {
+    "description": "Placeholder für Passwort-Eingabefeld"
+  },
+  "forgotPassword": "Passwort vergessen?",
+  "@forgotPassword": {
+    "description": "Link zum Zurücksetzen des Passworts"
+  },
+  "logIn": "Anmelden",
+  "@logIn": {
+    "description": "Text für Login-Button"
+  },
+  "dontHaveAccount": "Noch kein Konto?",
+  "@dontHaveAccount": {
+    "description": "Text vor dem Sign-up-Link"
+  },
+  "signUp": "Registrieren",
+  "@signUp": {
+    "description": "Link zur Registrierung"
+  }
+}
