@@ -268,4 +268,193 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get profile => 'Profile';
+
+  @override
+  String get vetVisit => 'Vet Visit';
+
+  @override
+  String get reasonForVisit => 'Reason for visit';
+
+  @override
+  String get vaccination => 'Vaccination';
+
+  @override
+  String get checkup => 'Checkup';
+
+  @override
+  String get emergency => 'Emergency';
+
+  @override
+  String get surgery => 'Surgery';
+
+  @override
+  String get prepNotes => 'Prep-Notes';
+
+  @override
+  String get notesForVetPlaceholder => 'Notes for the Vet...';
+
+  @override
+  String get attachments => 'Attachments';
+
+  @override
+  String get uploadDocumentPhoto => 'Upload Document/Photo';
+
+  @override
+  String get saveAppointment => 'Save Appointment';
+
+  @override
+  String get vetName => 'Vet / Clinic Name';
+
+  @override
+  String get vetNamePlaceholder => 'e.g. Happy Paws Clinic';
+
+  @override
+  String get datePlaceholder => 'Date';
+
+  @override
+  String get timePlaceholder => 'Time';
+
+  @override
+  String get addVetVisit => 'Add vet visit';
+
+  @override
+  String get vetNameRequired => 'Please enter vet or clinic name.';
+
+  @override
+  String get editAppointment => 'Edit Appointment';
+
+  @override
+  String get deleteAppointment => 'Delete Appointment';
+
+  @override
+  String get confirmDeleteTitle => 'Delete Appointment?';
+
+  @override
+  String get confirmDeleteMessage =>
+      'Are you sure you want to delete this appointment?';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get appointmentDetails => 'Appointment Details';
+
+  @override
+  String get waterLog => 'Water Log';
+
+  @override
+  String get quickAdd => 'QUICK ADD';
+
+  @override
+  String get smallBowl200ml => 'Small Bowl (200ml)';
+
+  @override
+  String get mediumBowl500ml => 'Medium Bowl (500ml)';
+
+  @override
+  String get fullRefill => 'Full Refill';
+
+  @override
+  String get time => 'TIME';
+
+  @override
+  String todayAtTime(String time) {
+    return 'Today, $time';
+  }
+
+  @override
+  String get autoDetected => 'Auto-detected';
+
+  @override
+  String get notes => 'NOTES';
+
+  @override
+  String get waterNotesPlaceholder => 'E.g., very thirsty after walk...';
+
+  @override
+  String get saveLog => 'Save Log';
+
+  @override
+  String get hourLabel => 'Hour';
+
+  @override
+  String get minuteLabel => 'Minute';
+
+  @override
+  String get hourHint => '0–23';
+
+  @override
+  String get minuteHint => '0–59';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get pottyLog => 'Potty Log';
+
+  @override
+  String get pee => 'Pee';
+
+  @override
+  String get poop => 'Poop';
+
+  @override
+  String get quality => 'QUALITY';
+
+  @override
+  String get hard => 'Hard';
+
+  @override
+  String get normal => 'Normal';
+
+  @override
+  String get soft => 'Soft';
+
+  @override
+  String get snapAPic => 'Snap a pic';
+
+  @override
+  String get anyAbnormalities => 'Any abnormalities?';
+
+  @override
+  String get searchLogsPlaceholder => 'Search logs...';
+
+  @override
+  String get all => 'All';
+
+  @override
+  String get health => 'Health';
+
+  @override
+  String get today => 'Today';
+
+  @override
+  String get yesterday => 'Yesterday';
+
+  @override
+  String get waterRefill => 'Water Refill';
+
+  @override
+  String get foodLog => 'Food Log';
+
+  @override
+  String get amount => 'AMOUNT';
+
+  @override
+  String get whatDidTheyEat => 'What did they eat?';
+
+  @override
+  String get searchKibblePlaceholder => 'Search kibble, brands...';
+
+  @override
+  String get photo => 'Photo';
+
+  @override
+  String get automaticEntry => 'Automatic entry';
+
+  @override
+  String get foodNotesPlaceholder => 'Any reaction? Did they finish it?';
 }

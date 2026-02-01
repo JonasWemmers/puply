@@ -272,4 +272,193 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get profile => 'Profil';
+
+  @override
+  String get vetVisit => 'Tierarztbesuch';
+
+  @override
+  String get reasonForVisit => 'Grund des Besuchs';
+
+  @override
+  String get vaccination => 'Impfung';
+
+  @override
+  String get checkup => 'Vorsorgeuntersuchung';
+
+  @override
+  String get emergency => 'Notfall';
+
+  @override
+  String get surgery => 'Operation';
+
+  @override
+  String get prepNotes => 'Vorbereitungsnotizen';
+
+  @override
+  String get notesForVetPlaceholder => 'Notizen für den Tierarzt...';
+
+  @override
+  String get attachments => 'Anhänge';
+
+  @override
+  String get uploadDocumentPhoto => 'Dokument/Foto hochladen';
+
+  @override
+  String get saveAppointment => 'Termin speichern';
+
+  @override
+  String get vetName => 'Tierarzt / Praxis';
+
+  @override
+  String get vetNamePlaceholder => 'z. B. Happy Paws Klinik';
+
+  @override
+  String get datePlaceholder => 'Datum';
+
+  @override
+  String get timePlaceholder => 'Uhrzeit';
+
+  @override
+  String get addVetVisit => 'Tierarzttermin eintragen';
+
+  @override
+  String get vetNameRequired => 'Bitte Tierarzt oder Praxis eintragen.';
+
+  @override
+  String get editAppointment => 'Termin bearbeiten';
+
+  @override
+  String get deleteAppointment => 'Termin löschen';
+
+  @override
+  String get confirmDeleteTitle => 'Termin löschen?';
+
+  @override
+  String get confirmDeleteMessage =>
+      'Möchtest du diesen Termin wirklich löschen?';
+
+  @override
+  String get cancel => 'Abbrechen';
+
+  @override
+  String get delete => 'Löschen';
+
+  @override
+  String get appointmentDetails => 'Termindetails';
+
+  @override
+  String get waterLog => 'Wasser-Log';
+
+  @override
+  String get quickAdd => 'SCHNELL HINZUFÜGEN';
+
+  @override
+  String get smallBowl200ml => 'Kleine Schale (200ml)';
+
+  @override
+  String get mediumBowl500ml => 'Mittlere Schale (500ml)';
+
+  @override
+  String get fullRefill => 'Voll nachfüllen';
+
+  @override
+  String get time => 'ZEIT';
+
+  @override
+  String todayAtTime(String time) {
+    return 'Heute, $time';
+  }
+
+  @override
+  String get autoDetected => 'Automatisch erkannt';
+
+  @override
+  String get notes => 'NOTIZEN';
+
+  @override
+  String get waterNotesPlaceholder => 'z. B. sehr durstig nach Spaziergang...';
+
+  @override
+  String get saveLog => 'Log speichern';
+
+  @override
+  String get hourLabel => 'Stunde';
+
+  @override
+  String get minuteLabel => 'Minute';
+
+  @override
+  String get hourHint => '0–23';
+
+  @override
+  String get minuteHint => '0–59';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get pottyLog => 'Geschäft-Log';
+
+  @override
+  String get pee => 'Pipi';
+
+  @override
+  String get poop => 'Groß';
+
+  @override
+  String get quality => 'KONSISTENZ';
+
+  @override
+  String get hard => 'Hart';
+
+  @override
+  String get normal => 'Normal';
+
+  @override
+  String get soft => 'Weich';
+
+  @override
+  String get snapAPic => 'Foto aufnehmen';
+
+  @override
+  String get anyAbnormalities => 'Auffälligkeiten?';
+
+  @override
+  String get searchLogsPlaceholder => 'Logs durchsuchen...';
+
+  @override
+  String get all => 'Alle';
+
+  @override
+  String get health => 'Gesundheit';
+
+  @override
+  String get today => 'Heute';
+
+  @override
+  String get yesterday => 'Gestern';
+
+  @override
+  String get waterRefill => 'Wasser nachgefüllt';
+
+  @override
+  String get foodLog => 'Futter-Log';
+
+  @override
+  String get amount => 'MENGE';
+
+  @override
+  String get whatDidTheyEat => 'Was hat er/sie gefressen?';
+
+  @override
+  String get searchKibblePlaceholder => 'Trockenfutter, Marken suchen...';
+
+  @override
+  String get photo => 'Foto';
+
+  @override
+  String get automaticEntry => 'Automatisch erfasst';
+
+  @override
+  String get foodNotesPlaceholder => 'Reaktion? Alles aufgegessen?';
 }

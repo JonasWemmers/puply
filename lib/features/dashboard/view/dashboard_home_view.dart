@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:provider/provider.dart';
+import 'package:intl/intl.dart';
 import 'package:publy/l10n/app_localizations.dart';
 import 'package:publy/core/theme/app_colors.dart';
 import 'package:publy/core/theme/app_theme.dart';
+import 'package:publy/features/vet_visit/viewmodel/vet_visit_provider.dart';
+import 'package:publy/features/vet_visit/view/vet_visit_view.dart';
+import 'package:publy/features/vet_visit/view/vet_visit_detail_view.dart';
+import 'package:publy/features/water_log/view/water_log_view.dart';
+import 'package:publy/features/potty_log/view/potty_log_view.dart';
+import 'package:publy/features/food_log/view/food_log_view.dart';
 
 /// Home-Inhalt des Dashboards: Begrüßung, Quick Log, Stimmung, Health Snapshot.
 class DashboardHomeView extends StatefulWidget {
@@ -53,6 +61,10 @@ class _DashboardHomeViewState extends State<DashboardHomeView> {
           _dogName = 'Sammy';
           _loading = false;
         });
+      }
+      // Tierarzttermin aus User-Dokument laden
+      if (mounted) {
+        await context.read<VetVisitProvider>().loadFromFirestore(uid);
       }
     } catch (e) {
       setState(() {
@@ -189,12 +201,24 @@ class _DashboardHomeViewState extends State<DashboardHomeView> {
                 _QuickLogTile(
                   icon: Icons.restaurant_outlined,
                   label: l10n.food,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (context) => const FoodLogView(),
+                      ),
+                    );
+                  },
                 ),
                 _QuickLogTile(
                   icon: Icons.water_drop_outlined,
                   label: l10n.water,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (context) => const WaterLogView(),
+                      ),
+                    );
+                  },
                 ),
                 _QuickLogTile(
                   icon: Icons.directions_walk_outlined,
@@ -204,7 +228,13 @@ class _DashboardHomeViewState extends State<DashboardHomeView> {
                 _QuickLogTile(
                   icon: Icons.park_outlined,
                   label: l10n.potty,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (context) => const PottyLogView(),
+                      ),
+                    );
+                  },
                 ),
                 _QuickLogTile(
                   icon: Icons.medical_services_outlined,
@@ -270,87 +300,176 @@ class _DashboardHomeViewState extends State<DashboardHomeView> {
               ),
             ),
             const SizedBox(height: 20),
-            // Health Snapshot Card (kompakt: Text links, Bild rechts)
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: AppColors.cream,
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: AppColors.subtleGrey),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.medical_services_outlined,
-                              size: 16,
-                              color: AppColors.sageGreen,
-                            ),
-                            const SizedBox(width: 6),
-                            Text(
-                              l10n.healthSnapshot,
-                              style: theme.textTheme.labelSmall?.copyWith(
-                                fontSize: 11,
-                                color: AppColors.sageGreen,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: 0.5,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          l10n.nextVetVisit,
-                          style: theme.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.w600,
+            // Health Snapshot Card: Plus wenn kein Termin, sonst Termin anzeigen
+            Consumer<VetVisitProvider>(
+              builder: (context, vetProvider, _) {
+                final visit = vetProvider.nextVetVisit;
+                final hasVisit = visit != null;
+                final locale = Localizations.localeOf(context).languageCode;
+                final dateStr = hasVisit
+                    ? DateFormat(
+                        'd. MMMM',
+                        locale == 'de' ? 'de' : 'en',
+                      ).format(visit.date)
+                    : '';
+                final (h, m) = hasVisit ? visit.timeOfDay : (0, 0);
+                final timeStr = hasVisit
+                    ? '${h > 12 ? h - 12 : (h == 0 ? 12 : h)}:${m.toString().padLeft(2, '0')} ${h < 12 ? 'AM' : 'PM'}'
+                    : '';
+
+                return Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: () {
+                      if (hasVisit) {
+                        Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                            builder: (context) =>
+                                VetVisitDetailView(visit: visit),
                           ),
-                        ),
-                        const SizedBox(height: 6),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.schedule_outlined,
-                              size: 16,
-                              color: AppColors.deepCharcoal.withValues(
-                                alpha: 0.6,
-                              ),
-                            ),
-                            const SizedBox(width: 6),
-                            Flexible(
-                              child: Text(
-                                '12. October • 10:00 AM',
-                                style: theme.textTheme.bodySmall?.copyWith(
-                                  color: AppColors.deepCharcoal.withValues(
-                                    alpha: 0.7,
+                        );
+                      } else {
+                        Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                            builder: (context) => const VetVisitView(),
+                          ),
+                        );
+                      }
+                    },
+                    borderRadius: BorderRadius.circular(12),
+                    child: Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: AppColors.cream,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: AppColors.subtleGrey),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.medical_services_outlined,
+                                      size: 16,
+                                      color: AppColors.sageGreen,
+                                    ),
+                                    const SizedBox(width: 6),
+                                    Text(
+                                      l10n.healthSnapshot,
+                                      style: theme.textTheme.labelSmall
+                                          ?.copyWith(
+                                            fontSize: 11,
+                                            color: AppColors.sageGreen,
+                                            fontWeight: FontWeight.w600,
+                                            letterSpacing: 0.5,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 8),
+                                Text(
+                                  l10n.nextVetVisit,
+                                  style: theme.textTheme.titleMedium?.copyWith(
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                overflow: TextOverflow.ellipsis,
+                                const SizedBox(height: 6),
+                                if (hasVisit) ...[
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.schedule_outlined,
+                                        size: 16,
+                                        color: AppColors.deepCharcoal
+                                            .withValues(alpha: 0.6),
+                                      ),
+                                      const SizedBox(width: 6),
+                                      Flexible(
+                                        child: Text(
+                                          '$dateStr • $timeStr',
+                                          style: theme.textTheme.bodySmall
+                                              ?.copyWith(
+                                                color: AppColors.deepCharcoal
+                                                    .withValues(alpha: 0.7),
+                                              ),
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    visit.vetName,
+                                    style: theme.textTheme.bodySmall?.copyWith(
+                                      color: AppColors.deepCharcoal.withValues(
+                                        alpha: 0.6,
+                                      ),
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ] else
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.add_circle_outline,
+                                        size: 20,
+                                        color: AppColors.sageGreen,
+                                      ),
+                                      const SizedBox(width: 6),
+                                      Text(
+                                        l10n.addVetVisit,
+                                        style: theme.textTheme.bodySmall
+                                            ?.copyWith(
+                                              color: AppColors.sageGreen,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          if (hasVisit)
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                'assets/img/ta_image.png',
+                                width: 100,
+                                height: 100,
+                                fit: BoxFit.cover,
+                              ),
+                            )
+                          else
+                            Container(
+                              width: 100,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                color: AppColors.lightSage.withValues(
+                                  alpha: 0.5,
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Icon(
+                                Icons.add,
+                                size: 40,
+                                color: AppColors.sageGreen.withValues(
+                                  alpha: 0.8,
+                                ),
                               ),
                             ),
-                          ],
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                  const SizedBox(width: 12),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.asset(
-                      'assets/img/ta_image.png',
-                      width: 100,
-                      height: 100,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ],
-              ),
+                );
+              },
             ),
             const SizedBox(height: 16),
           ],

@@ -6,6 +6,7 @@ import 'package:publy/l10n/app_localizations.dart';
 import 'package:publy/core/theme/app_theme.dart';
 import 'package:publy/features/splash/view/splash_view.dart';
 import 'package:publy/features/auth/viewmodel/auth_view_model.dart';
+import 'package:publy/features/vet_visit/viewmodel/vet_visit_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthViewModel()),
+        ChangeNotifierProvider(create: (_) => VetVisitProvider()),
       ],
       child: MaterialApp(
         title: 'Publy',
@@ -31,10 +33,7 @@ class MyApp extends StatelessWidget {
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: const [
-          Locale('de', ''),
-          Locale('en', ''),
-        ],
+        supportedLocales: const [Locale('de', ''), Locale('en', '')],
         locale: const Locale('de'),
         home: const SplashView(),
       ),
@@ -63,9 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

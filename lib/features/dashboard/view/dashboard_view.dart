@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:publy/core/theme/app_colors.dart';
 import 'package:publy/core/widgets/app_nav_bar.dart';
 import 'package:publy/features/dashboard/view/dashboard_home_view.dart';
+import 'package:publy/features/dashboard/view/dashboard_history_view.dart';
 
 /// Dashboard-Shell mit Bottom-NavBar.
 /// Zeigt je nach [currentIndex] Home, History, Analytics oder Profile.
@@ -23,7 +24,7 @@ class _DashboardViewState extends State<DashboardView> {
         index: _currentIndex,
         children: const [
           DashboardHomeView(),
-          _PlaceholderView(title: 'History'),
+          DashboardHistoryView(),
           _PlaceholderView(title: 'Analytics'),
           _PlaceholderView(title: 'Profile'),
         ],
