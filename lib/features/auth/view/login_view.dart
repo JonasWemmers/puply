@@ -6,9 +6,11 @@ import 'package:publy/l10n/app_localizations.dart';
 import 'package:publy/core/theme/app_colors.dart';
 import 'package:publy/core/theme/app_theme.dart';
 import 'package:publy/features/auth/viewmodel/auth_view_model.dart';
+import 'package:publy/features/auth/view/register_view.dart';
+import 'package:publy/features/dashboard/view/dashboard_view.dart';
 
 /// Login Screen View
-/// 
+///
 /// Zeigt Login-Optionen: Google, Apple, Email/Password
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -27,6 +29,48 @@ class _LoginViewState extends State<LoginView> {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  Future<void> _logIn(
+    BuildContext context,
+    AuthViewModel viewModel,
+    AppLocalizations l10n,
+  ) async {
+    final email = _emailController.text.trim();
+    final password = _passwordController.text;
+    if (email.isEmpty || password.isEmpty) return;
+
+    final uid = await viewModel.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+    if (!context.mounted) return;
+    if (uid != null) {
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (_) => const DashboardView()),
+        (route) => false,
+      );
+    } else if (viewModel.errorCode != null) {
+      final message = _errorMessageForCode(viewModel.errorCode!, l10n);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(message), backgroundColor: AppColors.terracotta),
+      );
+    }
+  }
+
+  String _errorMessageForCode(String code, AppLocalizations l10n) {
+    switch (code) {
+      case AuthErrorCode.emailAlreadyInUse:
+        return l10n.errorEmailAlreadyInUse;
+      case AuthErrorCode.invalidEmail:
+        return l10n.errorInvalidEmail;
+      case AuthErrorCode.weakPassword:
+        return l10n.errorWeakPassword;
+      case AuthErrorCode.operationNotAllowed:
+        return l10n.errorOperationNotAllowed;
+      default:
+        return l10n.errorRegistrationFailed;
+    }
   }
 
   @override
@@ -135,9 +179,7 @@ class _LoginViewState extends State<LoginView> {
               ElevatedButton(
                 onPressed: viewModel.isLoading
                     ? null
-                    : () {
-                        // TODO: Email/Password Login
-                      },
+                    : () => _logIn(context, viewModel, l10n),
                 child: Text(l10n.logIn),
               ),
               const SizedBox(height: 32),
@@ -152,7 +194,9 @@ class _LoginViewState extends State<LoginView> {
                   const SizedBox(width: 4),
                   TextButton(
                     onPressed: () {
-                      // TODO: Navigate to Register
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (_) => const RegisterView()),
+                      );
                     },
                     style: TextButton.styleFrom(
                       foregroundColor: AppColors.deepCharcoal,
@@ -176,9 +220,7 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 
-  Widget _buildGoogleButton({
-    required VoidCallback onPressed,
-  }) {
+  Widget _buildGoogleButton({required VoidCallback onPressed}) {
     // Platform-spezifisches Google Logo
     final googleLogoPath = Platform.isIOS
         ? 'assets/img/ios_neutral_rd_ctn.svg'
@@ -190,17 +232,12 @@ class _LoginViewState extends State<LoginView> {
       child: SizedBox(
         width: double.infinity,
         height: 40,
-        child: SvgPicture.asset(
-          googleLogoPath,
-          fit: BoxFit.contain,
-        ),
+        child: SvgPicture.asset(googleLogoPath, fit: BoxFit.contain),
       ),
     );
   }
 
-  Widget _buildAppleButton({
-    required VoidCallback onPressed,
-  }) {
+  Widget _buildAppleButton({required VoidCallback onPressed}) {
     return InkWell(
       onTap: onPressed,
       borderRadius: BorderRadius.circular(8),
@@ -218,25 +255,12 @@ class _LoginViewState extends State<LoginView> {
   Widget _buildSeparator(String text) {
     return Row(
       children: [
-        Expanded(
-          child: Divider(
-            color: AppColors.subtleGrey,
-            thickness: 1,
-          ),
-        ),
+        Expanded(child: Divider(color: AppColors.subtleGrey, thickness: 1)),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Text(
-            text,
-            style: AppTheme.lightTheme.textTheme.bodyMedium,
-          ),
+          child: Text(text, style: AppTheme.lightTheme.textTheme.bodyMedium),
         ),
-        Expanded(
-          child: Divider(
-            color: AppColors.subtleGrey,
-            thickness: 1,
-          ),
-        ),
+        Expanded(child: Divider(color: AppColors.subtleGrey, thickness: 1)),
       ],
     );
   }

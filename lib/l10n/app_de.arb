@@ -43,5 +43,235 @@
   "signUp": "Registrieren",
   "@signUp": {
     "description": "Link zur Registrierung"
-  }
+  },
+  "joinThePack": "Konto erstellen",
+  "@joinThePack": {
+    "description": "Überschrift auf dem Registrierungs-Screen"
+  },
+  "createAccountToStartTracking": "Erstelle ein Konto, um loszulegen",
+  "@createAccountToStartTracking": {
+    "description": "Untertitel auf dem Registrierungs-Screen"
+  },
+  "emailAddress": "E-Mail-Adresse",
+  "@emailAddress": {
+    "description": "Placeholder für E-Mail-Eingabe bei Registrierung"
+  },
+  "next": "Weiter",
+  "@next": {
+    "description": "Button zum Fortfahren bei der Registrierung"
+  },
+  "alreadyHaveAccount": "Bereits ein Konto?",
+  "@alreadyHaveAccount": {
+    "description": "Text vor dem Login-Link auf dem Registrierungs-Screen"
+  },
+  "almostThere": "Fast geschafft!",
+  "@almostThere": {
+    "description": "Titel auf Registrierungs-Schritt 2"
+  },
+  "yourName": "Dein Name",
+  "@yourName": {
+    "description": "Label für Namensfeld"
+  },
+  "enterYourFullName": "Gib deinen vollständigen Namen ein",
+  "@enterYourFullName": {
+    "description": "Placeholder für Namenseingabe"
+  },
+  "createPassword": "Passwort erstellen",
+  "@createPassword": {
+    "description": "Label für Passwortfeld bei Registrierung"
+  },
+  "atLeast8Characters": "Mindestens 8 Zeichen",
+  "@atLeast8Characters": {
+    "description": "Passwort-Hinweis und Placeholder"
+  },
+  "createAccount": "Konto erstellen",
+  "@createAccount": {
+    "description": "Button zum Abschluss der Registrierung"
+  },
+  "termsAndConditions": "Mit der Registrierung stimmst du unseren AGB zu.",
+  "@termsAndConditions": {
+    "description": "Rechtlicher Hinweis unter dem Konto-erstellen-Button"
+  },
+  "errorEmailAlreadyInUse": "Diese E-Mail-Adresse wird bereits verwendet.",
+  "@errorEmailAlreadyInUse": {
+    "description": "Auth-Fehler: E-Mail bereits registriert"
+  },
+  "errorInvalidEmail": "Ungültige E-Mail-Adresse.",
+  "@errorInvalidEmail": {
+    "description": "Auth-Fehler: ungültige E-Mail"
+  },
+  "errorWeakPassword": "Das Passwort ist zu schwach. Mindestens 8 Zeichen.",
+  "@errorWeakPassword": {
+    "description": "Auth-Fehler: schwaches Passwort"
+  },
+  "errorOperationNotAllowed": "E-Mail-Registrierung ist nicht aktiviert.",
+  "@errorOperationNotAllowed": {
+    "description": "Auth-Fehler: Aktion nicht erlaubt"
+  },
+  "errorRegistrationFailed": "Registrierung fehlgeschlagen.",
+  "@errorRegistrationFailed": {
+    "description": "Auth-Fehler: allgemein"
+  },
+  "stepXOfY": "SCHRITT {current} VON {total}",
+  "@stepXOfY": {
+    "description": "Onboarding-Fortschrittslabel",
+    "placeholders": {
+      "current": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "whosYourBestFriend": "Wer ist dein bester Freund?",
+  "@whosYourBestFriend": {
+    "description": "Onboarding Schritt 1 Titel"
+  },
+  "createProfileForPup": "Erstelle ein Profil für deinen Welpen.",
+  "@createProfileForPup": {
+    "description": "Onboarding Schritt 1 Untertitel"
+  },
+  "dogsName": "Name des Hundes",
+  "@dogsName": {
+    "description": "Placeholder für Hundename"
+  },
+  "gender": "Geschlecht",
+  "@gender": {
+    "description": "Label für Geschlechtsauswahl"
+  },
+  "boy": "Rüde",
+  "@boy": {
+    "description": "Geschlechtsoption männlich"
+  },
+  "girl": "Hündin",
+  "@girl": {
+    "description": "Geschlechtsoption weiblich"
+  },
+  "nextArrow": "Weiter →",
+  "@nextArrow": {
+    "description": "Onboarding-Weiter-Button"
+  },
+  "tellUsMoreAboutName": "Erzähl uns mehr über {name}",
+  "@tellUsMoreAboutName": {
+    "description": "Onboarding Schritt 2 Titel mit Hundename",
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "breedAgePersonalizeTips": "Rasse und Alter helfen uns, Gesundheitstipps zu personalisieren.",
+  "@breedAgePersonalizeTips": {
+    "description": "Onboarding Schritt 2 Untertitel"
+  },
+  "breed": "Rasse",
+  "@breed": {
+    "description": "Label für Rassenfeld"
+  },
+  "searchBreedsPlaceholder": "Rassen suchen (z. B. Golden Retriever)",
+  "@searchBreedsPlaceholder": {
+    "description": "Placeholder für Rassen-Suche/Dropdown"
+  },
+  "birthday": "Geburtstag",
+  "@birthday": {
+    "description": "Label für Geburtstagsfeld"
+  },
+  "birthdayPlaceholder": "dd.mm.yyyy",
+  "@birthdayPlaceholder": {
+    "description": "Placeholder für Geburtstagseingabe"
+  },
+  "iOnlyKnowApproximateAge": "Ich kenne nur das ungefähre Alter",
+  "@iOnlyKnowApproximateAge": {
+    "description": "Link für ungefähres Alter"
+  },
+  "continueButton": "Weiter",
+  "@continueButton": {
+    "description": "Onboarding Schritt 2 Weiter-Button"
+  },
+  "howHeavyIsName": "Wie schwer ist {name}?",
+  "@howHeavyIsName": {
+    "description": "Onboarding Schritt 3 Titel mit Hundename",
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "bodyCondition": "KÖRPERZUSTAND",
+  "@bodyCondition": {
+    "description": "Label für Körperzustand-Bereich"
+  },
+  "underweight": "Untergewicht",
+  "@underweight": {
+    "description": "Körperzustand-Option"
+  },
+  "ideal": "Ideal",
+  "@ideal": {
+    "description": "Körperzustand-Option"
+  },
+  "overweight": "Übergewicht",
+  "@overweight": {
+    "description": "Körperzustand-Option"
+  },
+  "anySpecialNeeds": "Besondere Bedürfnisse?",
+  "@anySpecialNeeds": {
+    "description": "Onboarding Schritt 4 Titel"
+  },
+  "specialNeedsSubtitle": "So können wir dein Erlebnis anpassen.",
+  "@specialNeedsSubtitle": {
+    "description": "Onboarding Schritt 4 Untertitel"
+  },
+  "allergies": "Allergien",
+  "@allergies": {
+    "description": "Option besondere Bedürfnisse"
+  },
+  "dailyMedication": "Tägliche Medikation",
+  "@dailyMedication": {
+    "description": "Option besondere Bedürfnisse"
+  },
+  "seniorDog": "Seniorenhund",
+  "@seniorDog": {
+    "description": "Option besondere Bedürfnisse"
+  },
+  "puppyTraining": "Welpentraining",
+  "@puppyTraining": {
+    "description": "Option besondere Bedürfnisse"
+  },
+  "none": "Keine",
+  "@none": {
+    "description": "Option – keine besonderen Bedürfnisse"
+  },
+  "finishAndExploreDashboard": "Fertig & Dashboard erkunden",
+  "@finishAndExploreDashboard": {
+    "description": "Onboarding Schritt 4 Abschluss-Button"
+  },
+  "goodMorning": "Guten Morgen, {name}!",
+  "@goodMorning": {
+    "placeholders": {"name": {"type": "String"}}
+  },
+  "goodAfternoon": "Guten Tag, {name}!",
+  "@goodAfternoon": {
+    "placeholders": {"name": {"type": "String"}}
+  },
+  "goodEvening": "Guten Abend, {name}!",
+  "@goodEvening": {
+    "placeholders": {"name": {"type": "String"}}
+  },
+  "howIsNameDoingToday": "Wie geht es {name} heute?",
+  "@howIsNameDoingToday": {
+    "placeholders": {"name": {"type": "String"}}
+  },
+  "quickLog": "Quick Log",
+  "edit": "Bearbeiten",
+  "food": "Futter",
+  "water": "Wasser",
+  "walk": "Gassi",
+  "potty": "Geschäft",
+  "symptoms": "Symptome",
+  "cycle": "Zyklus",
+  "currentMood": "Aktuelle Stimmung",
+  "playful": "Verspielt",
+  "sleepy": "Müde",
+  "hungry": "Hungrig",
+  "happy": "Fröhlich",
+  "sick": "Krank",
+  "healthSnapshot": "GESUNDHEITSÜBERSICHT",
+  "nextVetVisit": "Nächster Tierarztbesuch",
+  "home": "Home",
+  "history": "Verlauf",
+  "analytics": "Analysen",
+  "profile": "Profil"
 }

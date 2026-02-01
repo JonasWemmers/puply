@@ -163,6 +163,426 @@ abstract class AppLocalizations {
   /// In de, this message translates to:
   /// **'Registrieren'**
   String get signUp;
+
+  /// Überschrift auf dem Registrierungs-Screen
+  ///
+  /// In de, this message translates to:
+  /// **'Konto erstellen'**
+  String get joinThePack;
+
+  /// Untertitel auf dem Registrierungs-Screen
+  ///
+  /// In de, this message translates to:
+  /// **'Erstelle ein Konto, um loszulegen'**
+  String get createAccountToStartTracking;
+
+  /// Placeholder für E-Mail-Eingabe bei Registrierung
+  ///
+  /// In de, this message translates to:
+  /// **'E-Mail-Adresse'**
+  String get emailAddress;
+
+  /// Button zum Fortfahren bei der Registrierung
+  ///
+  /// In de, this message translates to:
+  /// **'Weiter'**
+  String get next;
+
+  /// Text vor dem Login-Link auf dem Registrierungs-Screen
+  ///
+  /// In de, this message translates to:
+  /// **'Bereits ein Konto?'**
+  String get alreadyHaveAccount;
+
+  /// Titel auf Registrierungs-Schritt 2
+  ///
+  /// In de, this message translates to:
+  /// **'Fast geschafft!'**
+  String get almostThere;
+
+  /// Label für Namensfeld
+  ///
+  /// In de, this message translates to:
+  /// **'Dein Name'**
+  String get yourName;
+
+  /// Placeholder für Namenseingabe
+  ///
+  /// In de, this message translates to:
+  /// **'Gib deinen vollständigen Namen ein'**
+  String get enterYourFullName;
+
+  /// Label für Passwortfeld bei Registrierung
+  ///
+  /// In de, this message translates to:
+  /// **'Passwort erstellen'**
+  String get createPassword;
+
+  /// Passwort-Hinweis und Placeholder
+  ///
+  /// In de, this message translates to:
+  /// **'Mindestens 8 Zeichen'**
+  String get atLeast8Characters;
+
+  /// Button zum Abschluss der Registrierung
+  ///
+  /// In de, this message translates to:
+  /// **'Konto erstellen'**
+  String get createAccount;
+
+  /// Rechtlicher Hinweis unter dem Konto-erstellen-Button
+  ///
+  /// In de, this message translates to:
+  /// **'Mit der Registrierung stimmst du unseren AGB zu.'**
+  String get termsAndConditions;
+
+  /// Auth-Fehler: E-Mail bereits registriert
+  ///
+  /// In de, this message translates to:
+  /// **'Diese E-Mail-Adresse wird bereits verwendet.'**
+  String get errorEmailAlreadyInUse;
+
+  /// Auth-Fehler: ungültige E-Mail
+  ///
+  /// In de, this message translates to:
+  /// **'Ungültige E-Mail-Adresse.'**
+  String get errorInvalidEmail;
+
+  /// Auth-Fehler: schwaches Passwort
+  ///
+  /// In de, this message translates to:
+  /// **'Das Passwort ist zu schwach. Mindestens 8 Zeichen.'**
+  String get errorWeakPassword;
+
+  /// Auth-Fehler: Aktion nicht erlaubt
+  ///
+  /// In de, this message translates to:
+  /// **'E-Mail-Registrierung ist nicht aktiviert.'**
+  String get errorOperationNotAllowed;
+
+  /// Auth-Fehler: allgemein
+  ///
+  /// In de, this message translates to:
+  /// **'Registrierung fehlgeschlagen.'**
+  String get errorRegistrationFailed;
+
+  /// Onboarding-Fortschrittslabel
+  ///
+  /// In de, this message translates to:
+  /// **'SCHRITT {current} VON {total}'**
+  String stepXOfY(int current, int total);
+
+  /// Onboarding Schritt 1 Titel
+  ///
+  /// In de, this message translates to:
+  /// **'Wer ist dein bester Freund?'**
+  String get whosYourBestFriend;
+
+  /// Onboarding Schritt 1 Untertitel
+  ///
+  /// In de, this message translates to:
+  /// **'Erstelle ein Profil für deinen Welpen.'**
+  String get createProfileForPup;
+
+  /// Placeholder für Hundename
+  ///
+  /// In de, this message translates to:
+  /// **'Name des Hundes'**
+  String get dogsName;
+
+  /// Label für Geschlechtsauswahl
+  ///
+  /// In de, this message translates to:
+  /// **'Geschlecht'**
+  String get gender;
+
+  /// Geschlechtsoption männlich
+  ///
+  /// In de, this message translates to:
+  /// **'Rüde'**
+  String get boy;
+
+  /// Geschlechtsoption weiblich
+  ///
+  /// In de, this message translates to:
+  /// **'Hündin'**
+  String get girl;
+
+  /// Onboarding-Weiter-Button
+  ///
+  /// In de, this message translates to:
+  /// **'Weiter →'**
+  String get nextArrow;
+
+  /// Onboarding Schritt 2 Titel mit Hundename
+  ///
+  /// In de, this message translates to:
+  /// **'Erzähl uns mehr über {name}'**
+  String tellUsMoreAboutName(String name);
+
+  /// Onboarding Schritt 2 Untertitel
+  ///
+  /// In de, this message translates to:
+  /// **'Rasse und Alter helfen uns, Gesundheitstipps zu personalisieren.'**
+  String get breedAgePersonalizeTips;
+
+  /// Label für Rassenfeld
+  ///
+  /// In de, this message translates to:
+  /// **'Rasse'**
+  String get breed;
+
+  /// Placeholder für Rassen-Suche/Dropdown
+  ///
+  /// In de, this message translates to:
+  /// **'Rassen suchen (z. B. Golden Retriever)'**
+  String get searchBreedsPlaceholder;
+
+  /// Label für Geburtstagsfeld
+  ///
+  /// In de, this message translates to:
+  /// **'Geburtstag'**
+  String get birthday;
+
+  /// Placeholder für Geburtstagseingabe
+  ///
+  /// In de, this message translates to:
+  /// **'dd.mm.yyyy'**
+  String get birthdayPlaceholder;
+
+  /// Link für ungefähres Alter
+  ///
+  /// In de, this message translates to:
+  /// **'Ich kenne nur das ungefähre Alter'**
+  String get iOnlyKnowApproximateAge;
+
+  /// Onboarding Schritt 2 Weiter-Button
+  ///
+  /// In de, this message translates to:
+  /// **'Weiter'**
+  String get continueButton;
+
+  /// Onboarding Schritt 3 Titel mit Hundename
+  ///
+  /// In de, this message translates to:
+  /// **'Wie schwer ist {name}?'**
+  String howHeavyIsName(String name);
+
+  /// Label für Körperzustand-Bereich
+  ///
+  /// In de, this message translates to:
+  /// **'KÖRPERZUSTAND'**
+  String get bodyCondition;
+
+  /// Körperzustand-Option
+  ///
+  /// In de, this message translates to:
+  /// **'Untergewicht'**
+  String get underweight;
+
+  /// Körperzustand-Option
+  ///
+  /// In de, this message translates to:
+  /// **'Ideal'**
+  String get ideal;
+
+  /// Körperzustand-Option
+  ///
+  /// In de, this message translates to:
+  /// **'Übergewicht'**
+  String get overweight;
+
+  /// Onboarding Schritt 4 Titel
+  ///
+  /// In de, this message translates to:
+  /// **'Besondere Bedürfnisse?'**
+  String get anySpecialNeeds;
+
+  /// Onboarding Schritt 4 Untertitel
+  ///
+  /// In de, this message translates to:
+  /// **'So können wir dein Erlebnis anpassen.'**
+  String get specialNeedsSubtitle;
+
+  /// Option besondere Bedürfnisse
+  ///
+  /// In de, this message translates to:
+  /// **'Allergien'**
+  String get allergies;
+
+  /// Option besondere Bedürfnisse
+  ///
+  /// In de, this message translates to:
+  /// **'Tägliche Medikation'**
+  String get dailyMedication;
+
+  /// Option besondere Bedürfnisse
+  ///
+  /// In de, this message translates to:
+  /// **'Seniorenhund'**
+  String get seniorDog;
+
+  /// Option besondere Bedürfnisse
+  ///
+  /// In de, this message translates to:
+  /// **'Welpentraining'**
+  String get puppyTraining;
+
+  /// Option – keine besonderen Bedürfnisse
+  ///
+  /// In de, this message translates to:
+  /// **'Keine'**
+  String get none;
+
+  /// Onboarding Schritt 4 Abschluss-Button
+  ///
+  /// In de, this message translates to:
+  /// **'Fertig & Dashboard erkunden'**
+  String get finishAndExploreDashboard;
+
+  /// No description provided for @goodMorning.
+  ///
+  /// In de, this message translates to:
+  /// **'Guten Morgen, {name}!'**
+  String goodMorning(String name);
+
+  /// No description provided for @goodAfternoon.
+  ///
+  /// In de, this message translates to:
+  /// **'Guten Tag, {name}!'**
+  String goodAfternoon(String name);
+
+  /// No description provided for @goodEvening.
+  ///
+  /// In de, this message translates to:
+  /// **'Guten Abend, {name}!'**
+  String goodEvening(String name);
+
+  /// No description provided for @howIsNameDoingToday.
+  ///
+  /// In de, this message translates to:
+  /// **'Wie geht es {name} heute?'**
+  String howIsNameDoingToday(String name);
+
+  /// No description provided for @quickLog.
+  ///
+  /// In de, this message translates to:
+  /// **'Quick Log'**
+  String get quickLog;
+
+  /// No description provided for @edit.
+  ///
+  /// In de, this message translates to:
+  /// **'Bearbeiten'**
+  String get edit;
+
+  /// No description provided for @food.
+  ///
+  /// In de, this message translates to:
+  /// **'Futter'**
+  String get food;
+
+  /// No description provided for @water.
+  ///
+  /// In de, this message translates to:
+  /// **'Wasser'**
+  String get water;
+
+  /// No description provided for @walk.
+  ///
+  /// In de, this message translates to:
+  /// **'Gassi'**
+  String get walk;
+
+  /// No description provided for @potty.
+  ///
+  /// In de, this message translates to:
+  /// **'Geschäft'**
+  String get potty;
+
+  /// No description provided for @symptoms.
+  ///
+  /// In de, this message translates to:
+  /// **'Symptome'**
+  String get symptoms;
+
+  /// No description provided for @cycle.
+  ///
+  /// In de, this message translates to:
+  /// **'Zyklus'**
+  String get cycle;
+
+  /// No description provided for @currentMood.
+  ///
+  /// In de, this message translates to:
+  /// **'Aktuelle Stimmung'**
+  String get currentMood;
+
+  /// No description provided for @playful.
+  ///
+  /// In de, this message translates to:
+  /// **'Verspielt'**
+  String get playful;
+
+  /// No description provided for @sleepy.
+  ///
+  /// In de, this message translates to:
+  /// **'Müde'**
+  String get sleepy;
+
+  /// No description provided for @hungry.
+  ///
+  /// In de, this message translates to:
+  /// **'Hungrig'**
+  String get hungry;
+
+  /// No description provided for @happy.
+  ///
+  /// In de, this message translates to:
+  /// **'Fröhlich'**
+  String get happy;
+
+  /// No description provided for @sick.
+  ///
+  /// In de, this message translates to:
+  /// **'Krank'**
+  String get sick;
+
+  /// No description provided for @healthSnapshot.
+  ///
+  /// In de, this message translates to:
+  /// **'GESUNDHEITSÜBERSICHT'**
+  String get healthSnapshot;
+
+  /// No description provided for @nextVetVisit.
+  ///
+  /// In de, this message translates to:
+  /// **'Nächster Tierarztbesuch'**
+  String get nextVetVisit;
+
+  /// No description provided for @home.
+  ///
+  /// In de, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @history.
+  ///
+  /// In de, this message translates to:
+  /// **'Verlauf'**
+  String get history;
+
+  /// No description provided for @analytics.
+  ///
+  /// In de, this message translates to:
+  /// **'Analysen'**
+  String get analytics;
+
+  /// No description provided for @profile.
+  ///
+  /// In de, this message translates to:
+  /// **'Profil'**
+  String get profile;
 }
 
 class _AppLocalizationsDelegate

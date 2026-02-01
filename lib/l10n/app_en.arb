@@ -43,5 +43,235 @@
   "signUp": "Sign up",
   "@signUp": {
     "description": "Link to registration"
-  }
+  },
+  "joinThePack": "Create account",
+  "@joinThePack": {
+    "description": "Heading on registration screen"
+  },
+  "createAccountToStartTracking": "Create an account to start tracking",
+  "@createAccountToStartTracking": {
+    "description": "Subtitle on registration screen"
+  },
+  "emailAddress": "Email Address",
+  "@emailAddress": {
+    "description": "Placeholder for email input on registration"
+  },
+  "next": "Next",
+  "@next": {
+    "description": "Button to continue registration"
+  },
+  "alreadyHaveAccount": "Already have an account?",
+  "@alreadyHaveAccount": {
+    "description": "Text before login link on registration screen"
+  },
+  "almostThere": "Almost there!",
+  "@almostThere": {
+    "description": "Title on registration step 2"
+  },
+  "yourName": "Your Name",
+  "@yourName": {
+    "description": "Label for name field"
+  },
+  "enterYourFullName": "Enter your full name",
+  "@enterYourFullName": {
+    "description": "Placeholder for name input"
+  },
+  "createPassword": "Create Password",
+  "@createPassword": {
+    "description": "Label for password field on registration"
+  },
+  "atLeast8Characters": "At least 8 characters",
+  "@atLeast8Characters": {
+    "description": "Password hint and placeholder"
+  },
+  "createAccount": "Create Account",
+  "@createAccount": {
+    "description": "Button to finish registration"
+  },
+  "termsAndConditions": "By signing up, you agree to our Terms & Conditions.",
+  "@termsAndConditions": {
+    "description": "Legal notice below create account button"
+  },
+  "errorEmailAlreadyInUse": "This email address is already in use.",
+  "@errorEmailAlreadyInUse": {
+    "description": "Auth error: email already registered"
+  },
+  "errorInvalidEmail": "Invalid email address.",
+  "@errorInvalidEmail": {
+    "description": "Auth error: invalid email"
+  },
+  "errorWeakPassword": "Password is too weak. Use at least 8 characters.",
+  "@errorWeakPassword": {
+    "description": "Auth error: weak password"
+  },
+  "errorOperationNotAllowed": "Email registration is not enabled.",
+  "@errorOperationNotAllowed": {
+    "description": "Auth error: operation not allowed"
+  },
+  "errorRegistrationFailed": "Registration failed.",
+  "@errorRegistrationFailed": {
+    "description": "Auth error: generic"
+  },
+  "stepXOfY": "STEP {current} OF {total}",
+  "@stepXOfY": {
+    "description": "Onboarding progress label",
+    "placeholders": {
+      "current": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "whosYourBestFriend": "Who's your best friend?",
+  "@whosYourBestFriend": {
+    "description": "Onboarding step 1 title"
+  },
+  "createProfileForPup": "Let's create a profile for your pup.",
+  "@createProfileForPup": {
+    "description": "Onboarding step 1 subtitle"
+  },
+  "dogsName": "Dog's Name",
+  "@dogsName": {
+    "description": "Placeholder for dog name input"
+  },
+  "gender": "Gender",
+  "@gender": {
+    "description": "Label for gender selection"
+  },
+  "boy": "Boy",
+  "@boy": {
+    "description": "Gender option male"
+  },
+  "girl": "Girl",
+  "@girl": {
+    "description": "Gender option female"
+  },
+  "nextArrow": "Next →",
+  "@nextArrow": {
+    "description": "Onboarding next button"
+  },
+  "tellUsMoreAboutName": "Tell us more about {name}",
+  "@tellUsMoreAboutName": {
+    "description": "Onboarding step 2 title with dog name",
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "breedAgePersonalizeTips": "Knowing the breed and age helps us personalize health tips.",
+  "@breedAgePersonalizeTips": {
+    "description": "Onboarding step 2 subtitle"
+  },
+  "breed": "Breed",
+  "@breed": {
+    "description": "Label for breed field"
+  },
+  "searchBreedsPlaceholder": "Search breeds (e.g. Golden Retriever)",
+  "@searchBreedsPlaceholder": {
+    "description": "Placeholder for breed search/dropdown"
+  },
+  "birthday": "Birthday",
+  "@birthday": {
+    "description": "Label for birthday field"
+  },
+  "birthdayPlaceholder": "mm/dd/yyyy",
+  "@birthdayPlaceholder": {
+    "description": "Placeholder for birthday input"
+  },
+  "iOnlyKnowApproximateAge": "I only know the approximate age",
+  "@iOnlyKnowApproximateAge": {
+    "description": "Link for approximate age option"
+  },
+  "continueButton": "Continue",
+  "@continueButton": {
+    "description": "Onboarding step 2 continue button"
+  },
+  "howHeavyIsName": "How heavy is {name}?",
+  "@howHeavyIsName": {
+    "description": "Onboarding step 3 title with dog name",
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "bodyCondition": "BODY CONDITION",
+  "@bodyCondition": {
+    "description": "Label for body condition section"
+  },
+  "underweight": "Underweight",
+  "@underweight": {
+    "description": "Body condition option"
+  },
+  "ideal": "Ideal",
+  "@ideal": {
+    "description": "Body condition option"
+  },
+  "overweight": "Overweight",
+  "@overweight": {
+    "description": "Body condition option"
+  },
+  "anySpecialNeeds": "Any special needs?",
+  "@anySpecialNeeds": {
+    "description": "Onboarding step 4 title"
+  },
+  "specialNeedsSubtitle": "This helps us tailor your experience.",
+  "@specialNeedsSubtitle": {
+    "description": "Onboarding step 4 subtitle"
+  },
+  "allergies": "Allergies",
+  "@allergies": {
+    "description": "Special need option"
+  },
+  "dailyMedication": "Daily Medication",
+  "@dailyMedication": {
+    "description": "Special need option"
+  },
+  "seniorDog": "Senior Dog",
+  "@seniorDog": {
+    "description": "Special need option"
+  },
+  "puppyTraining": "Puppy Training",
+  "@puppyTraining": {
+    "description": "Special need option"
+  },
+  "none": "None",
+  "@none": {
+    "description": "Special need option - no special needs"
+  },
+  "finishAndExploreDashboard": "Finish & Explore Dashboard",
+  "@finishAndExploreDashboard": {
+    "description": "Onboarding step 4 finish button"
+  },
+  "goodMorning": "Good morning, {name}!",
+  "@goodMorning": {
+    "placeholders": {"name": {"type": "String"}}
+  },
+  "goodAfternoon": "Good afternoon, {name}!",
+  "@goodAfternoon": {
+    "placeholders": {"name": {"type": "String"}}
+  },
+  "goodEvening": "Good evening, {name}!",
+  "@goodEvening": {
+    "placeholders": {"name": {"type": "String"}}
+  },
+  "howIsNameDoingToday": "How is {name} doing today?",
+  "@howIsNameDoingToday": {
+    "placeholders": {"name": {"type": "String"}}
+  },
+  "quickLog": "Quick Log",
+  "edit": "Edit",
+  "food": "Food",
+  "water": "Water",
+  "walk": "Walk",
+  "potty": "Potty",
+  "symptoms": "Symptoms",
+  "cycle": "Cycle",
+  "currentMood": "Current Mood",
+  "playful": "Playful",
+  "sleepy": "Sleepy",
+  "hungry": "Hungry",
+  "happy": "Happy",
+  "sick": "Sick",
+  "healthSnapshot": "HEALTH SNAPSHOT",
+  "nextVetVisit": "Next Vet Visit",
+  "home": "Home",
+  "history": "History",
+  "analytics": "Analytics",
+  "profile": "Profile"
 }

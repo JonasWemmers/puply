@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:publy/core/theme/app_colors.dart';
 import 'package:publy/core/theme/app_theme.dart';
 import 'package:publy/features/auth/view/login_view.dart';
+import 'package:publy/features/dashboard/view/dashboard_view.dart';
 
 /// Splash Screen View
 ///
-/// Zeigt das Pfoten-Icon und den App-Namen "Puply" zentriert an
-/// Navigiert nach 2 Sekunden zum Login Screen
+/// Zeigt das Pfoten-Icon und den App-Namen "Puply" zentriert an.
+/// Navigiert nach 2 Sekunden zum Dashboard (wenn eingeloggt) oder zum Login.
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
 
@@ -18,16 +20,19 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    _navigateToLogin();
+    _navigateAfterSplash();
   }
 
-  void _navigateToLogin() {
+  void _navigateAfterSplash() {
     Future.delayed(const Duration(seconds: 2), () {
-      if (mounted) {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const LoginView()),
-        );
-      }
+      if (!mounted) return;
+      final user = FirebaseAuth.instance.currentUser;
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (_) =>
+              user != null ? const DashboardView() : const LoginView(),
+        ),
+      );
     });
   }
 
@@ -40,11 +45,7 @@ class _SplashViewState extends State<SplashView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Pfoten-Icon (Material Icon)
-            Icon(
-              Icons.pets,
-              size: 80,
-              color: AppColors.terracotta,
-            ),
+            Icon(Icons.pets, size: 80, color: AppColors.terracotta),
             const SizedBox(height: 32),
             // App Name "Puply"
             Text('Puply', style: AppTheme.lightTheme.textTheme.displayLarge),
