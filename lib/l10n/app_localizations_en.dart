@@ -457,4 +457,83 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get foodNotesPlaceholder => 'Any reaction? Did they finish it?';
+
+  @override
+  String get walkLog => 'Walk Log';
+
+  @override
+  String get symptomLog => 'Symptom Log';
+
+  @override
+  String get saveHealthLog => 'Save Health Log';
+
+  @override
+  String get quickBreak => 'Quick Break';
+
+  @override
+  String get standardWalk => 'Standard Walk';
+
+  @override
+  String get trackGps => 'Track GPS';
+
+  @override
+  String get addNotesAboutWalk =>
+      'Add notes about the walk (e.g., played with Rex, good energy)...';
+
+  @override
+  String get fiveMin => '5 min';
+
+  @override
+  String get twoHours => '2 hr';
+
+  @override
+  String get whatsWrong => 'What\'s wrong?';
+
+  @override
+  String get selectOneOrMoreSymptoms => 'Select one or more symptoms.';
+
+  @override
+  String get vomiting => 'Vomiting';
+
+  @override
+  String get noAppetite => 'No Appetite';
+
+  @override
+  String get diarrhea => 'Diarrhea';
+
+  @override
+  String get lethargy => 'Lethargy';
+
+  @override
+  String get coughing => 'Coughing';
+
+  @override
+  String get other => 'Other';
+
+  @override
+  String get severity => 'Severity';
+
+  @override
+  String get mild => 'MILD';
+
+  @override
+  String get severe => 'SEVERE';
+
+  @override
+  String get moderate => 'Moderate';
+
+  @override
+  String get photoEvidence => 'Photo Evidence';
+
+  @override
+  String get addPhotoForVet => 'Add Photo (e.g., for the vet)';
+
+  @override
+  String get describeBehaviorTexture => 'Describe behavior, texture, etc...';
+
+  @override
+  String get walkEntry => 'Walk';
+
+  @override
+  String get symptomEntry => 'Symptom';
 }

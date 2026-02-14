@@ -12,6 +12,8 @@ import 'package:publy/features/vet_visit/view/vet_visit_detail_view.dart';
 import 'package:publy/features/water_log/view/water_log_view.dart';
 import 'package:publy/features/potty_log/view/potty_log_view.dart';
 import 'package:publy/features/food_log/view/food_log_view.dart';
+import 'package:publy/features/walk_log/view/walk_log_view.dart';
+import 'package:publy/features/symptom_log/view/symptom_log_view.dart';
 
 /// Home-Inhalt des Dashboards: Begrüßung, Quick Log, Stimmung, Health Snapshot.
 class DashboardHomeView extends StatefulWidget {
@@ -223,7 +225,13 @@ class _DashboardHomeViewState extends State<DashboardHomeView> {
                 _QuickLogTile(
                   icon: Icons.directions_walk_outlined,
                   label: l10n.walk,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (context) => const WalkLogView(),
+                      ),
+                    );
+                  },
                 ),
                 _QuickLogTile(
                   icon: Icons.park_outlined,
@@ -239,7 +247,13 @@ class _DashboardHomeViewState extends State<DashboardHomeView> {
                 _QuickLogTile(
                   icon: Icons.medical_services_outlined,
                   label: l10n.symptoms,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (context) => const SymptomLogView(),
+                      ),
+                    );
+                  },
                 ),
                 _QuickLogTile(
                   icon: Icons.calendar_today_outlined,

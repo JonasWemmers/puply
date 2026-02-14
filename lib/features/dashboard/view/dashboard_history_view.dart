@@ -95,6 +95,20 @@ class _DashboardHistoryViewState extends State<DashboardHistoryView> {
           .orderBy('loggedAt', descending: true)
           .get();
 
+      final walkSnap = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(uid)
+          .collection('walkLogs')
+          .orderBy('loggedAt', descending: true)
+          .get();
+
+      final symptomSnap = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(uid)
+          .collection('symptomLogs')
+          .orderBy('loggedAt', descending: true)
+          .get();
+
       final list = <_HistoryEntry>[];
 
       for (final doc in waterSnap.docs) {
@@ -178,6 +192,62 @@ class _DashboardHistoryViewState extends State<DashboardHistoryView> {
         );
       }
 
+      for (final doc in walkSnap.docs) {
+        final d = doc.data();
+        final loggedAt = (d['loggedAt'] as Timestamp?)?.toDate();
+        if (loggedAt == null) continue;
+        final duration = d['durationMinutes'] as int? ?? 0;
+        list.add(
+          _HistoryEntry(
+            id: doc.id,
+            type: 'walk',
+            title: l10n.walkEntry,
+            loggedAt: loggedAt,
+            value: '$duration min',
+            iconBgColor: const Color(0xFFD4E8D0),
+            icon: Icon(
+              Icons.directions_walk_outlined,
+              size: 24,
+              color: Colors.green.shade700,
+            ),
+            hasImage: d['hasPhoto'] as bool? ?? false,
+          ),
+        );
+      }
+
+      for (final doc in symptomSnap.docs) {
+        final d = doc.data();
+        final loggedAt = (d['loggedAt'] as Timestamp?)?.toDate();
+        if (loggedAt == null) continue;
+        final symptoms =
+            (d['symptoms'] as List<dynamic>?)?.cast<String>() ?? [];
+        final severity = d['severity'] as int? ?? 1;
+        String sevLabel;
+        if (severity <= 2) {
+          sevLabel = l10n.mild;
+        } else if (severity >= 4) {
+          sevLabel = l10n.severe;
+        } else {
+          sevLabel = l10n.moderate;
+        }
+        list.add(
+          _HistoryEntry(
+            id: doc.id,
+            type: 'symptom',
+            title: symptoms.isNotEmpty ? l10n.symptomEntry : l10n.symptomEntry,
+            loggedAt: loggedAt,
+            value: sevLabel,
+            iconBgColor: const Color(0xFFF5D5D5),
+            icon: Icon(
+              Icons.medical_services_outlined,
+              size: 24,
+              color: Colors.red.shade400,
+            ),
+            hasImage: d['hasPhoto'] as bool? ?? false,
+          ),
+        );
+      }
+
       list.sort((a, b) => b.loggedAt.compareTo(a.loggedAt));
       if (mounted) {
         setState(() {
@@ -213,7 +283,12 @@ class _DashboardHistoryViewState extends State<DashboardHistoryView> {
         break;
       case _HistoryFilter.health:
         list = list
-            .where((e) => e.type == 'potty' || e.type == 'health')
+            .where(
+              (e) =>
+                  e.type == 'potty' ||
+                  e.type == 'health' ||
+                  e.type == 'symptom',
+            )
             .toList();
         break;
       case _HistoryFilter.walk:

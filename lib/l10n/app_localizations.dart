@@ -955,6 +955,162 @@ abstract class AppLocalizations {
   /// In de, this message translates to:
   /// **'Reaktion? Alles aufgegessen?'**
   String get foodNotesPlaceholder;
+
+  /// No description provided for @walkLog.
+  ///
+  /// In de, this message translates to:
+  /// **'Gassi-Log'**
+  String get walkLog;
+
+  /// No description provided for @symptomLog.
+  ///
+  /// In de, this message translates to:
+  /// **'Symptom-Log'**
+  String get symptomLog;
+
+  /// No description provided for @saveHealthLog.
+  ///
+  /// In de, this message translates to:
+  /// **'Gesundheits-Log speichern'**
+  String get saveHealthLog;
+
+  /// No description provided for @quickBreak.
+  ///
+  /// In de, this message translates to:
+  /// **'Kurze Pause'**
+  String get quickBreak;
+
+  /// No description provided for @standardWalk.
+  ///
+  /// In de, this message translates to:
+  /// **'Spaziergang'**
+  String get standardWalk;
+
+  /// No description provided for @trackGps.
+  ///
+  /// In de, this message translates to:
+  /// **'GPS verfolgen'**
+  String get trackGps;
+
+  /// No description provided for @addNotesAboutWalk.
+  ///
+  /// In de, this message translates to:
+  /// **'Notizen zum Spaziergang (z. B. mit Rex gespielt, gute Energie)...'**
+  String get addNotesAboutWalk;
+
+  /// No description provided for @fiveMin.
+  ///
+  /// In de, this message translates to:
+  /// **'5 Min'**
+  String get fiveMin;
+
+  /// No description provided for @twoHours.
+  ///
+  /// In de, this message translates to:
+  /// **'2 Std'**
+  String get twoHours;
+
+  /// No description provided for @whatsWrong.
+  ///
+  /// In de, this message translates to:
+  /// **'Was stimmt nicht?'**
+  String get whatsWrong;
+
+  /// No description provided for @selectOneOrMoreSymptoms.
+  ///
+  /// In de, this message translates to:
+  /// **'Wähle ein oder mehrere Symptome.'**
+  String get selectOneOrMoreSymptoms;
+
+  /// No description provided for @vomiting.
+  ///
+  /// In de, this message translates to:
+  /// **'Erbrechen'**
+  String get vomiting;
+
+  /// No description provided for @noAppetite.
+  ///
+  /// In de, this message translates to:
+  /// **'Kein Appetit'**
+  String get noAppetite;
+
+  /// No description provided for @diarrhea.
+  ///
+  /// In de, this message translates to:
+  /// **'Durchfall'**
+  String get diarrhea;
+
+  /// No description provided for @lethargy.
+  ///
+  /// In de, this message translates to:
+  /// **'Lethargie'**
+  String get lethargy;
+
+  /// No description provided for @coughing.
+  ///
+  /// In de, this message translates to:
+  /// **'Husten'**
+  String get coughing;
+
+  /// No description provided for @other.
+  ///
+  /// In de, this message translates to:
+  /// **'Sonstiges'**
+  String get other;
+
+  /// No description provided for @severity.
+  ///
+  /// In de, this message translates to:
+  /// **'Schweregrad'**
+  String get severity;
+
+  /// No description provided for @mild.
+  ///
+  /// In de, this message translates to:
+  /// **'LEICHT'**
+  String get mild;
+
+  /// No description provided for @severe.
+  ///
+  /// In de, this message translates to:
+  /// **'SCHWER'**
+  String get severe;
+
+  /// No description provided for @moderate.
+  ///
+  /// In de, this message translates to:
+  /// **'Mittel'**
+  String get moderate;
+
+  /// No description provided for @photoEvidence.
+  ///
+  /// In de, this message translates to:
+  /// **'Foto-Beweis'**
+  String get photoEvidence;
+
+  /// No description provided for @addPhotoForVet.
+  ///
+  /// In de, this message translates to:
+  /// **'Foto hinzufügen (z. B. für den Tierarzt)'**
+  String get addPhotoForVet;
+
+  /// No description provided for @describeBehaviorTexture.
+  ///
+  /// In de, this message translates to:
+  /// **'Verhalten, Konsistenz, etc. beschreiben...'**
+  String get describeBehaviorTexture;
+
+  /// No description provided for @walkEntry.
+  ///
+  /// In de, this message translates to:
+  /// **'Gassi'**
+  String get walkEntry;
+
+  /// No description provided for @symptomEntry.
+  ///
+  /// In de, this message translates to:
+  /// **'Symptom'**
+  String get symptomEntry;
 }
 
 class _AppLocalizationsDelegate

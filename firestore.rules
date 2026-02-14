@@ -1,0 +1,36 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // User-Profil (users/{uid}): nur eigener Zugriff
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+
+      // Wasser-Logs (users/{uid}/waterLogs): nur eigener Zugriff
+      match /waterLogs/{logId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      // Potty-Logs (users/{uid}/pottyLogs): nur eigener Zugriff
+      match /pottyLogs/{logId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      // Food-Logs (users/{uid}/foodLogs): nur eigener Zugriff
+      match /foodLogs/{logId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      // Walk-Logs (users/{uid}/walkLogs): nur eigener Zugriff
+      match /walkLogs/{logId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      // Symptom-Logs (users/{uid}/symptomLogs): nur eigener Zugriff
+      match /symptomLogs/{logId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+  }
+}

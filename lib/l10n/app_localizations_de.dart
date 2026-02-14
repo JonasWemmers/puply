@@ -461,4 +461,84 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get foodNotesPlaceholder => 'Reaktion? Alles aufgegessen?';
+
+  @override
+  String get walkLog => 'Gassi-Log';
+
+  @override
+  String get symptomLog => 'Symptom-Log';
+
+  @override
+  String get saveHealthLog => 'Gesundheits-Log speichern';
+
+  @override
+  String get quickBreak => 'Kurze Pause';
+
+  @override
+  String get standardWalk => 'Spaziergang';
+
+  @override
+  String get trackGps => 'GPS verfolgen';
+
+  @override
+  String get addNotesAboutWalk =>
+      'Notizen zum Spaziergang (z. B. mit Rex gespielt, gute Energie)...';
+
+  @override
+  String get fiveMin => '5 Min';
+
+  @override
+  String get twoHours => '2 Std';
+
+  @override
+  String get whatsWrong => 'Was stimmt nicht?';
+
+  @override
+  String get selectOneOrMoreSymptoms => 'Wähle ein oder mehrere Symptome.';
+
+  @override
+  String get vomiting => 'Erbrechen';
+
+  @override
+  String get noAppetite => 'Kein Appetit';
+
+  @override
+  String get diarrhea => 'Durchfall';
+
+  @override
+  String get lethargy => 'Lethargie';
+
+  @override
+  String get coughing => 'Husten';
+
+  @override
+  String get other => 'Sonstiges';
+
+  @override
+  String get severity => 'Schweregrad';
+
+  @override
+  String get mild => 'LEICHT';
+
+  @override
+  String get severe => 'SCHWER';
+
+  @override
+  String get moderate => 'Mittel';
+
+  @override
+  String get photoEvidence => 'Foto-Beweis';
+
+  @override
+  String get addPhotoForVet => 'Foto hinzufügen (z. B. für den Tierarzt)';
+
+  @override
+  String get describeBehaviorTexture =>
+      'Verhalten, Konsistenz, etc. beschreiben...';
+
+  @override
+  String get walkEntry => 'Gassi';
+
+  @override
+  String get symptomEntry => 'Symptom';
 }
